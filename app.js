@@ -503,7 +503,7 @@ function handleCheckoutSubmit(event) {
 }
 
 function sendOrderToWhatsApp(customerName, paymentMethod, items, total) {
-  const phoneNumber = '5561981227195';
+  const phoneNumber = '556182188478';
 
   let message = `*🎉 NOVO PEDIDO - Delícias da Mah*\n\n`;
   message += `👤 *Cliente:* ${customerName}\n`;
