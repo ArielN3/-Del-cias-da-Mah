@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delícias da Mah - Trufados Gourmet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div>
+                <h1 class="header-title">Delícias da Mah</h1>
+                <p class="header-subtitle">Trufados Gourmet</p>
+            </div>
+            <button class="cart-button" onclick="toggleCart()">
+                <svg class="cart-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                    </path>
+                </svg>
+                <span class="cart-badge" id="cartBadge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Category Menu Button -->
+    <button class="category-menu-button" onclick="toggleCategoryMenu()">
+        <svg class="menu-icon" id="menuIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg class="menu-icon hidden" id="closeIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+
+    <!-- Category Menu Sidebar -->
+    <div class="category-sidebar" id="categorySidebar">
+        <div class="category-content">
+            <h3 class="category-title">Categorias</h3>
+            <nav class="category-nav" id="categoryNav">
+                <h1>afsdf</h1>
+                <h1>asdfa</h1>
+            </nav>
+        </div>
+    </div>
+    <div class="overlay" id="categoryOverlay" onclick="toggleCategoryMenu()"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2 class="hero-title">Sabores que Encantam</h2>
+            <p class="hero-subtitle">Descubra nossas delícias artesanais feitas com carinho e ingredientes selecionados
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <main class="main-content">
+        <div class="container" id="productsContainer"></div>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2 class="cart-title">Seu Carrinho</h2>
+                <button class="close-button" onclick="toggleCart()">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div id="cartItems"></div>
+            <div class="cart-footer" id="cartFooter"></div>
+        </div>
+    </div>
+    <div class="overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Finalizar Pedido</h2>
+                <button class="close-button" onclick="closeCheckoutModal()">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="order-summary">
+                    <h3 class="summary-title">Resumo do Pedido</h3>
+                    <div id="orderSummary"></div>
+                </div>
+                <form id="checkoutForm" onsubmit="handleCheckoutSubmit(event)">
+                    <div class="form-group">
+                        <label class="form-label">Seu Nome</label>
+                        <input type="text" id="customerName" class="form-input" placeholder="Digite seu nome completo"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Forma de Pagamento</label>
+                        <select id="paymentMethod" class="form-input" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="Dinheiro">Dinheiro</option>
+                            <option value="Cartão de Crédito">Cartão de Crédito</option>
+                            <option value="Cartão de Débito">Cartão de Débito</option>
+                            <option value="PIX">PIX</option>
+                            <option value="Transferência Bancária">Transferência Bancária</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Pedido via WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="overlay" id="checkoutOverlay" onclick="closeCheckoutModal()"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2025 Delícias da Mah. Feito com amor e dedicação.</p>
+        </div>
+    </footer>
+
+<script src="app.js"></script>
+</body>
+
+</html>
