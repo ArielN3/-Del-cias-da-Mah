@@ -706,6 +706,52 @@ body {
   padding: 2rem 0;
   color: #6b7280;
 }
+ /* Estilos específicos para a área do desenvolvedor */
+        .developer-credit {
+            margin-top: 8px;
+            font-size: 0.75rem;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .developer-credit:hover {
+            opacity: 0.9;
+        }
+
+        .developer-text {
+            color: #000000;
+        }
+
+        .developer-link {
+            text-decoration: none;
+            color: #1a0f0f;
+            transition: color 0.3s ease;
+        }
+
+        .developer-link:hover {
+            color: #ff6b35;
+        }
+
+        .developer-name {
+            position: relative;
+            display: inline-block;
+        }
+
+        .developer-name::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #ff6b35;
+            transition: width 0.3s ease;
+        }
+
+        .developer-link:hover .developer-name::after {
+            width: 100%;
+        }
+
 
 @media (max-width: 768px) {
   .header-title {
